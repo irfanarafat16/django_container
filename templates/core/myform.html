@@ -1,0 +1,18 @@
+{% load static %}
+<html>
+<head>
+<link rel="stylesheet" href='{% static "css/style.css" %}'>
+<title>BarakObama</title>
+</head>
+<body>
+<em><h2 class="rrr">Input Person Info</h2></em>
+
+<form action = "" method = "post">
+    {% csrf_token %}
+    {{form }}
+    <input type="submit" value=Submit">
+</form>
+
+
+</body>
+</html>

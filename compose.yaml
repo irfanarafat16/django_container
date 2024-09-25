@@ -1,0 +1,45 @@
+services:
+
+  db:
+    image: isql
+    container_name: db_a
+    ports:
+      - "3306:3306"
+    volumes:
+      - eee:/var/lib/mysql
+    networks:
+      mmm:
+        ipv4_address: 172.15.0.21
+
+  subweb:
+    image: qqqq
+    ports:
+      - "8009:8000"
+    container_name: api_simple
+    networks:
+      mmm:
+        ipv4_address: 172.15.0.11
+
+
+  mainweb:
+    image: ff
+    container_name: web_a
+    ports:
+      - "8030:8000"
+    volumes:
+      - ivl:/usr/src/app/static/images
+    networks:
+      - mmm
+
+
+
+
+volumes:
+  ivl:
+    external: true
+  eee:
+    external: true
+
+networks:
+  mmm:
+    external: true
