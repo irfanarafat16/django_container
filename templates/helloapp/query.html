@@ -1,0 +1,32 @@
+{% load static %}
+<html>
+<head>
+<link rel="stylesheet" href='{% static "css/style.css" %}'>
+<title>BarakObama</title>
+</head>
+<body>
+<em><h2 class="rrr">Table Data</h2></em>
+
+{% for a in aaa %}
+<div class='rrr'>
+{{ a.name }} - {{ a.address }}
+</div>
+{% endfor %}
+<hr style="border: 1px solid blue;">
+<table class='rrr' style="text-align:center;margin-left:auto;margin-right:auto;">
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+  </tr>
+
+{% for a in aaa %}
+<tr>
+    <td>{{ a.name }}</td>
+    <td>{{ a.address }}</td>
+</tr>
+{% endfor %}
+</table>
+
+
+</body>
+</html>
